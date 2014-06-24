@@ -1,0 +1,19 @@
+head
+	title HelloMeteor3
+
+body
+	+hello
+
+template(name="hello")
+	h1 Hello world!
+	header.navbar
+		.navbar-inner
+			a(class="brand" href="/") Microscope
+			ul.nav.pull-right
+				li
+					+loginButtons
+
+	=greeting
+	input(type="button" value="click")
+
+

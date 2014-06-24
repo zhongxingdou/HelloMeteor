@@ -1,0 +1,1 @@
+sayHello = -> alert("hello")
