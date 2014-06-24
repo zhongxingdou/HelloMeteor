@@ -12,6 +12,7 @@
       "port": "22",
       "user": "xingdou",
       "cert": "/Users/zhonghal/.ssh/id_rsa",
+      "passphrase": "",
       "remotePath": "/home/xingdou/",
       "runPort": "3000",
       "rootUrl": "http://toany.net",
