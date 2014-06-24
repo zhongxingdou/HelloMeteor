@@ -7,13 +7,12 @@
   },
   "author": "zhongxingdou",
   "deployConfig": {
-    "alpha": {
+    "master": {
       "remote" : "115.29.243.25",
       "port": "22",
       "user": "xingdou",
       "cert": "/Users/zhonghal/.ssh/id_rsa",
       "remotePath": "/home/xingdou/",
-      "ref": "origin/master",
       "runPort": "3000",
       "rootUrl": "http://toany.net",
       "mongoUrl": "mongodb://localhost:27017/HelloMeteor"
