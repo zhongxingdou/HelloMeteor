@@ -4,7 +4,10 @@
       "git": "https://github.com/mquandalle/meteor-jade.git",
       "tag": "v0.2.4"
     },
-    "router": {},
-    "accounts-ui-bootstrap-dropdown": {}
+    "iron-router": {},
+    "accounts-ui-bootstrap-dropdown": {},
+    "iron-router-resource": {},
+    "iron-router-active": {},
+    "iron-router-auth": {}
   }
 }

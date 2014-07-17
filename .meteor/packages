@@ -4,14 +4,15 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
 insecure
 coffeescript
 less
 jquery
 accounts-base
 jade
-router
 bootstrap
 accounts-ui-bootstrap-dropdown
 accounts-password
+iron-router-resource
+iron-router-auth
+iron-router

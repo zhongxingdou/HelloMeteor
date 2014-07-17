@@ -6,8 +6,11 @@
         "git": "https://github.com/mquandalle/meteor-jade.git",
         "tag": "v0.2.4"
       },
-      "router": {},
-      "accounts-ui-bootstrap-dropdown": {}
+      "iron-router": {},
+      "accounts-ui-bootstrap-dropdown": {},
+      "iron-router-resource": {},
+      "iron-router-active": {},
+      "iron-router-auth": {}
     },
     "packages": {
       "jade": {
@@ -15,25 +18,35 @@
         "tag": "v0.2.4",
         "commit": "a47a4c59daaa57e7fe5f1544d4ea76d95a5c9abf"
       },
-      "router": {
-        "git": "https://github.com/tmeasday/meteor-router.git",
-        "tag": "v0.6.1",
-        "commit": "8ec75fec7affdefc787d19f23b36fd6d1d44ef04"
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.7.1",
+        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
       },
       "accounts-ui-bootstrap-dropdown": {
         "git": "https://github.com/erobit/meteor-accounts-ui-bootstrap-dropdown.git",
         "tag": "v0.8.3",
         "commit": "a7af8a52e4e74db020a69b158a8f992797b8b0b0"
       },
-      "page-js-ie-support": {
-        "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
-        "tag": "v1.3.5",
-        "commit": "b99ed8380aefd10b2afc8f18d9eed4dd0d8ea9cb"
+      "iron-router-resource": {
+        "git": "https://github.com/XpressiveCode/iron-router-resource.git",
+        "tag": "v0.2.2",
+        "commit": "66522fc794250569ccfb653494b75c9a4feffe98"
       },
-      "HTML5-History-API": {
-        "git": "https://github.com/tmeasday/meteor-HTML5-History-API.git",
-        "tag": "v4.1.2",
-        "commit": "b5fca79f9ae8936e5f748a04f475295f4fa1cc7a"
+      "iron-router-active": {
+        "git": "https://github.com/XpressiveCode/iron-router-active.git",
+        "tag": "v0.2.0",
+        "commit": "1b05aad5325c3dfdb5186b9c288aa53013d767b8"
+      },
+      "iron-router-auth": {
+        "git": "https://github.com/XpressiveCode/iron-router-auth.git",
+        "tag": "v0.2.1",
+        "commit": "39b5d70326536641bc50a184d195aa3ac49ff4a5"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.4",
+        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
       }
     }
   }

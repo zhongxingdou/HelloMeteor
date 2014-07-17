@@ -1,0 +1,11 @@
+template(name="edm_categories")
+	h1 List Edm Categories
+	.form-inline
+		label(for="category") New category：
+		input(type="text" id="category" value="")
+		input.btn(type="button" value="add" id="btnAdd")
+		
+	ul
+		each categories
+			li= name
+

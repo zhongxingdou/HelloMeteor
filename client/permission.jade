@@ -1,0 +1,24 @@
+template(name="permissions")
+	h1 Roles and Permisson
+
+	.form-inline
+		input.span1(type='text' id='role')
+		a.btn.btn-default(href='javascript:;' id='addNewRole') add Role
+
+	.form-inline
+		input.span1(type='text' id='permissions')
+		a.btn.btn-default(href='javascript:;' id='addNewPermissions') add Permission
+
+	h2 Roles
+	ul.roles.inline
+		each roles
+			li(class=activeClass)=role
+
+	h3 Permissions
+	ul.permissons.inline
+		each permissions
+			li
+				label.checkbox-inline
+					input.permissions-item(type='checkbox' checked=activeRoleHavePermission)
+				=name
+
