@@ -8,6 +8,7 @@
     "accounts-ui-bootstrap-dropdown": {},
     "iron-router-resource": {},
     "iron-router-active": {},
-    "iron-router-auth": {}
+    "iron-router-auth": {},
+    "bootstrap3-less": {}
   }
 }

@@ -1,3 +1,14 @@
-.roles .active{
-	background: yellow;
+@import "/packages/bootstrap3-less/bootstrap.import.less";
+.roles{
+	.active .role{
+		background: yellow;
+	}
+
+}
+
+.del-role, .del-permission{
+	cursor: pointer;
+	&:hover{
+		color: red;
+	}
 }

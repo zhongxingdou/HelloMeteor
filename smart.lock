@@ -10,7 +10,8 @@
       "accounts-ui-bootstrap-dropdown": {},
       "iron-router-resource": {},
       "iron-router-active": {},
-      "iron-router-auth": {}
+      "iron-router-auth": {},
+      "bootstrap3-less": {}
     },
     "packages": {
       "jade": {
@@ -42,6 +43,11 @@
         "git": "https://github.com/XpressiveCode/iron-router-auth.git",
         "tag": "v0.2.1",
         "commit": "39b5d70326536641bc50a184d195aa3ac49ff4a5"
+      },
+      "bootstrap3-less": {
+        "git": "https://github.com/simison/bootstrap3-less",
+        "tag": "v0.2.1",
+        "commit": "dc94a51ed00d7de6d6f2b6d65107a876d849ad61"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

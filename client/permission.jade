@@ -1,5 +1,5 @@
 template(name="permissions")
-	h1 Roles and Permisson
+	h1 Roles and Permissions
 
 	.form-inline
 		input.span1(type='text' id='role')
@@ -10,15 +10,23 @@ template(name="permissions")
 		a.btn.btn-default(href='javascript:;' id='addNewPermissions') add Permission
 
 	h2 Roles
-	ul.roles.inline
+	ul.roles
 		each roles
-			li(class=activeClass)=role
+			if is_editing
+				li
+					input#input-role(type='text' value=role)
+			else
+				li(class=activeClass)
+					span.role=role
+					span.del-role.glyphicon.glyphicon-remove
+
 
 	h3 Permissions
-	ul.permissons.inline
+	ul.permissons.list-inline
 		each permissions
 			li
 				label.checkbox-inline
 					input.permissions-item(type='checkbox' checked=activeRoleHavePermission)
-				=name
+					=name
+					span.del-permission.glyphicon.glyphicon-remove
 
