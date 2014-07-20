@@ -10,9 +10,9 @@ less
 jquery
 accounts-base
 jade
-bootstrap
 accounts-ui-bootstrap-dropdown
 accounts-password
 iron-router-resource
 iron-router-auth
 iron-router
+bootstrap3-less
