@@ -1,32 +1,41 @@
 template(name="permissions")
 	h1 Roles and Permissions
 
-	.form-inline
-		input.span1(type='text' id='role')
-		a.btn.btn-default(href='javascript:;' id='addNewRole') add Role
+	div.col-md-4
+		//- +quickForm collection="Roles" id="insertRoleForm" type="insert"
+		//- +quickForm collection="Permissions" id="insertPermissionForm" type="insert"
 
-	.form-inline
-		input.span1(type='text' id='permissions')
-		a.btn.btn-default(href='javascript:;' id='addNewPermissions') add Permission
 
-	h2 Roles
-	ul.roles
-		each roles
-			if is_editing
+		.form-inline
+			input.span1(type='text' id='role')
+			a.btn.btn-default(href='javascript:;' id='addNewRole') add Role
+
+		.form-inline
+			input.span1(type='text' id='permissions')
+			a.btn.btn-default(href='javascript:;' id='addNewPermissions') add Permission
+
+		h2 Roles
+		ul.roles
+			each roles
+				if is_editing_role
+					li
+						input#input-role(type='text' value=role)
+				else
+					li(class=activeClass)
+						span.role=role
+						span.del-role.glyphicon.glyphicon-remove
+
+
+		h3 Permissions
+		ul.permissons.list-inline
+			each permissions
 				li
-					input#input-role(type='text' value=role)
-			else
-				li(class=activeClass)
-					span.role=role
-					span.del-role.glyphicon.glyphicon-remove
-
-
-	h3 Permissions
-	ul.permissons.list-inline
-		each permissions
-			li
-				label.checkbox-inline
-					input.permissions-item(type='checkbox' checked=activeRoleHavePermission)
-					=name
-					span.del-permission.glyphicon.glyphicon-remove
+					if is_editing_permission
+						input#input-permission(type='text' value=name)
+					else
+						label.checkbox-inline
+							input.permissions-item(type='checkbox' checked=activeRoleHavePermission)
+							=name
+						span.edit-permission.glyphicon.glyphicon-pencil
+						span.del-permission.glyphicon.glyphicon-remove
 

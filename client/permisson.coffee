@@ -20,41 +20,83 @@ Template.permissions.events
 		input = evt.target
 		if input.checked
 			Roles.update {"_id": Session.get "active_role"},
-				"$push":
+				"$addToSet":
 					"permissions": @name
 		else
 			Roles.update {"_id": Session.get "active_role"},
 				"$pop": 
-					"permissions": @name
+				 	"permissions": @name
 
 
 	"mousedown .roles li": (evt, tmpl) ->
 		Session.set('active_role', @_id)
 
 	"dblclick .roles li": (evt, tmpl) ->
-		Session.set('edit_role', @_id)
+		Session.set('editing_role', @_id)
 		Deps.flush()
 		ActivateInput tmpl.find('#input-role') 
+
+	"click .edit-permission": (evt, tmpl) ->
+		Session.set 'editing_permission', @_id
+		Deps.flush()
+		ActivateInput tmpl.find('#input-permission')
+
 
 	"click .del-role": (evt, tmpl) ->
 		if Session.equals 'active_role', @_id
 			Session.set 'active_role', null
-		Roles.remove(@_id)
+		Roles.remove
+			"_id": @_id
 
 	"click .del-permission": (evt, tmpl) ->
-		Permissions.remove(@_id)
+		# Meteor.call "deletePermission", @_id, @name
+		name = @name
+		Roles.find {"permissions": name} 
+			.forEach (item) ->
+				Roles.update {"_id": item._id},
+		            "$pull":
+		                "permissions": name
+		            ,
+		                "multi": true
+
+		Permissions.remove 
+			"_id": @_id
 
 Template.permissions.events OkCancelEvents '#input-role', 
 	ok: (value, evt) ->
-		Roles.update @_id,
-			"$set":
-				"role": value
+		if value != @role
+			Roles.update @_id,
+				"$set":
+					"role": value
 
-		Session.set('edit_role', null)
+		Session.set('editing_role', null)
 
 	cancel: (value, evt) ->
-		Session.set('edit_role', null)
+		Session.set('editing_role', null)
 
+Template.permissions.events OkCancelEvents '#input-permission', 
+	ok: (value, evt) ->
+		if(value != @name)
+			name = @name
+			Permissions.update @_id,
+				"$set":
+					"name": value
+
+			Roles.find {"permissions": name} 
+				.forEach (item) ->
+					Roles.update {"_id": item._id},
+			            "$pull":
+			                "permissions": name
+			        Roles.update {"_id": item._id},
+			        	"$push":
+			                "permissions": value
+
+		Session.set('editing_permission', null)
+
+	cancel: (value, evt) ->
+		Session.set('editing_permission', null)
+
+	
 Template.permissions.activeClass = ->
 	if @_id == Session.get 'active_role' then 'active' else ''
 
@@ -68,11 +110,15 @@ Template.permissions.activeRoleHavePermission = ->
 	else
 		false
 
-Template.permissions.is_editing = ->
-	Session.equals 'edit_role', @_id
+Template.permissions.is_editing_role = ->
+	Session.equals 'editing_role', @_id
 
+Template.permissions.is_editing_permission = ->
+	Session.equals 'editing_permission', @_id
 
 Session.setDefault('active_role', null)
+Session.setDefault('editing_role', null)
+Session.setDefault('editing_permission', null)
 	
 
 GetActiveRole = ->

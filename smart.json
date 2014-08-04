@@ -1,14 +1,12 @@
 {
   "packages": {
-    "jade": {
-      "git": "https://github.com/mquandalle/meteor-jade.git",
-      "tag": "v0.2.4"
-    },
     "iron-router": {},
     "accounts-ui-bootstrap-dropdown": {},
     "iron-router-resource": {},
     "iron-router-active": {},
     "iron-router-auth": {},
-    "bootstrap3-less": {}
+    "bootstrap3-less": {},
+    "autoform": {},
+	"jade": {}
   }
 }

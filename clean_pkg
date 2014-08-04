@@ -1,0 +1,4 @@
+#!/bin/sh
+#mrt remove $1
+rm -rf ~/.meteorite/packages/$1
+rm -rf ./packages/$1
